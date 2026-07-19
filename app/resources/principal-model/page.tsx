@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ArticleLayout from "@/components/ArticleLayout";
+import BrowserFrame from "@/components/BrowserFrame";
 
 export const metadata: Metadata = {
   title: "The principal model: human and AI governance actors — Procela",
@@ -49,6 +50,17 @@ export default function Article() {
         trail. You can see what it did, why, and on whose authority — just as you can
         for a human.
       </p>
+
+      <div className="article-figure">
+        <BrowserFrame
+          src="/screenshots/agents.webp"
+          alt="Procela agents view listing AI, pipeline, and service-account principals with their type and status."
+        />
+        <p className="article-caption">
+          AI agents and service accounts modeled as named principals, each with a
+          type and status.
+        </p>
+      </div>
 
       <h2>The three-tier autonomy framework</h2>
       <p>

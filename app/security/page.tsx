@@ -3,6 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CtaBand from "@/components/CtaBand";
 import Icon, { type IconName } from "@/components/Icon";
+import BrowserFrame from "@/components/BrowserFrame";
 
 export const metadata: Metadata = {
   title: "Security — Procela",
@@ -102,6 +103,45 @@ export default function SecurityPage() {
                 {c}
               </span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      <section className="section">
+        <div className="section-inner">
+          <span className="eyebrow">Accountability by design</span>
+          <h2 className="section-title">If it happened, it&apos;s in the record</h2>
+
+          <div className="product-row">
+            <div className="product-copy">
+              <span className="product-kicker">Audit trail</span>
+              <h3>Every change, attributable and time-stamped</h3>
+              <p>
+                Creates, updates, and deletes across the program are captured in a
+                tamper-evident log — the answer to who changed what, and when.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/audit.webp"
+              alt="Procela audit log listing time-stamped create, update, and login events with the responsible actor."
+            />
+          </div>
+
+          <div className="product-row reverse">
+            <div className="product-copy">
+              <span className="product-kicker">Gap detection</span>
+              <h3>See where governance is thin before an auditor does</h3>
+              <p>
+                Procela surfaces ownership gaps, ungoverned assets, and coverage holes
+                across your program — so you can close them proactively.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/gaps.webp"
+              alt="Procela gap detection view showing total, critical, and warning governance gaps with an ownership-gap breakdown."
+            />
           </div>
         </div>
       </section>
