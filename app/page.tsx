@@ -90,7 +90,7 @@ export default function Home() {
 
       {/* LOGO STRIP */}
       <div className="logo-strip">
-        <span className="logo-strip-label">Integrates with</span>
+        <span className="logo-strip-label">Designed to integrate with</span>
         {INTEGRATIONS.map((name) => (
           <span key={name} className="logo-pill">
             {name}
