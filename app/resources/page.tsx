@@ -36,16 +36,19 @@ const FEATURED = [
     kicker: "Guide",
     title: "Standing up a DG Foundation program in 30 days",
     body: "A phased playbook for reaching an audit-ready governance baseline, starting with your highest-priority domains.",
+    href: "/resources/dg-foundation-30-days",
   },
   {
     kicker: "Whitepaper",
     title: "The principal model: human and AI governance actors",
     body: "How Procela models authority for stewards, owners, and agents — and the three-tier autonomy framework behind it.",
+    href: "/resources/principal-model",
   },
   {
     kicker: "Architecture",
     title: "Edge Agents and the no-egress deployment model",
     body: "How push-down profiling and mTLS identity keep source data inside your perimeter.",
+    href: "/resources/edge-agents",
   },
 ];
 
@@ -90,7 +93,7 @@ export default function ResourcesPage() {
           <h2 className="section-title">Recommended reading</h2>
           <div className="card-grid">
             {FEATURED.map((f) => (
-              <Link className="card" href="/demo" key={f.title}>
+              <Link className="card" href={f.href} key={f.title}>
                 <span className="card-kicker">{f.kicker}</span>
                 <h3>{f.title}</h3>
                 <p>{f.body}</p>
