@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
+import BrowserFrame from "@/components/BrowserFrame";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PlatformTabs from "@/components/PlatformTabs";
@@ -87,6 +88,13 @@ export default function Home() {
             </Link>
           </div>
         </header>
+        <div className="hero-shot">
+          <BrowserFrame
+            src="/screenshots/hero.webp"
+            alt="The Procela dashboard showing governance coverage across value streams, processes, data assets, and systems."
+            priority
+          />
+        </div>
       </div>
 
       {/* LOGO STRIP */}
