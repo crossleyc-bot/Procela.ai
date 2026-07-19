@@ -88,24 +88,27 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <header className="hero">
-        <span className="hero-eyebrow">Enterprise Data Governance Platform</span>
-        <h1>
-          Governance that <em>aligns</em>
-          <br />
-          people, process, systems,
-          <br />
-          and data
-        </h1>
-        <p className="hero-sub">
-          Procela is the orchestration layer that connects your stewards, policies,
-          tools, and data assets into a single, auditable governance program.
-        </p>
-        <div className="hero-actions">
-          <button className="btn-primary-lg">Request a demo</button>
-          <button className="btn-outline-lg">Explore the platform</button>
-        </div>
-      </header>
+      <div className="hero-band">
+        <header className="hero">
+          <span className="hero-eyebrow">Enterprise Data Governance Platform</span>
+          <h1>
+            Governance that <em>aligns</em>
+            <br />
+            people, process, systems,
+            <br />
+            and data
+          </h1>
+          <p className="hero-sub">
+            Procela is the orchestration layer that connects your stewards,
+            policies, tools, and data assets into a single, auditable governance
+            program.
+          </p>
+          <div className="hero-actions">
+            <button className="btn-primary-lg">Request a demo</button>
+            <button className="btn-outline-lg">Explore the platform</button>
+          </div>
+        </header>
+      </div>
 
       {/* LOGO STRIP */}
       <div className="logo-strip" id="integrations">
