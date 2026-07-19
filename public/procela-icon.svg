@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" role="img" aria-label="Procela">
+  <rect x="0" y="0" width="40" height="40" rx="9" fill="#0D1F17"/>
+  <rect x="0.5" y="0.5" width="39" height="39" rx="8.5" stroke="#4A8C6A" stroke-opacity="0.35"/>
+  <!-- left column: small square tiles -->
+  <rect x="8"  y="8"  width="7"  height="6" rx="1.8" fill="#70C090"/>
+  <rect x="8"  y="17" width="7"  height="6" rx="1.8" fill="#4A8C6A"/>
+  <rect x="8"  y="26" width="7"  height="6" rx="1.8" fill="#4A8C6A"/>
+  <!-- right column: wider bar tiles -->
+  <rect x="17" y="8"  width="15" height="6" rx="1.8" fill="#4A8C6A"/>
+  <rect x="17" y="17" width="15" height="6" rx="1.8" fill="#70C090"/>
+  <rect x="17" y="26" width="15" height="6" rx="1.8" fill="#3D7558"/>
+</svg>
