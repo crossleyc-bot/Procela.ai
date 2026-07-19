@@ -92,10 +92,27 @@ export default function Article() {
 
       <h2>Authority, scope, and auditability</h2>
       <p>
-        Every principal&apos;s authority is bounded and inspectable. Combined with a
-        tamper-evident log of every classification, assignment, and policy decision,
-        that means you can always answer the auditor&apos;s core question: who did
-        this, and were they allowed to?
+        Every principal&apos;s authority is bounded and inspectable. Because roles and
+        process ownership are explicit, Procela can derive a full RACI matrix —
+        who&apos;s Responsible, Accountable, Consulted, and Informed for every activity
+        — automatically.
+      </p>
+
+      <div className="article-figure">
+        <BrowserFrame
+          src="/screenshots/raci.webp"
+          alt="Procela RACI matrix mapping process activities to responsible, accountable, consulted, and informed principals."
+        />
+        <p className="article-caption">
+          A RACI matrix generated from process ownership and governance-role
+          assignments.
+        </p>
+      </div>
+
+      <p>
+        Combined with a tamper-evident log of every classification, assignment, and
+        policy decision, that means you can always answer the auditor&apos;s core
+        question: who did this, and were they allowed to?
       </p>
 
       <h2>Why it matters for regulated environments</h2>

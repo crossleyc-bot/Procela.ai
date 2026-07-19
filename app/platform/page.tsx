@@ -121,6 +121,22 @@ export default function PlatformPage() {
 
           <div className="product-row">
             <div className="product-copy">
+              <span className="product-kicker">Enterprise view</span>
+              <h3>One view across the entire enterprise</h3>
+              <p>
+                Processes, systems, data assets, and domains — and how they connect —
+                in a single pane, so leadership can see the whole governance program at
+                a glance.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/enterprise.webp"
+              alt="Procela enterprise view showing counts of processes, systems, data assets, and domains with their relationships."
+            />
+          </div>
+
+          <div className="product-row reverse">
+            <div className="product-copy">
               <span className="product-kicker">Stewardship &amp; ownership</span>
               <h3>Every person, role, and domain in one place</h3>
               <p>
@@ -135,7 +151,7 @@ export default function PlatformPage() {
             />
           </div>
 
-          <div className="product-row reverse">
+          <div className="product-row">
             <div className="product-copy">
               <span className="product-kicker">Systems &amp; data</span>
               <h3>A live inventory of where your data lives</h3>
@@ -150,7 +166,7 @@ export default function PlatformPage() {
             />
           </div>
 
-          <div className="product-row">
+          <div className="product-row reverse">
             <div className="product-copy">
               <span className="product-kicker">Lineage</span>
               <h3>Data flows, derived automatically</h3>
