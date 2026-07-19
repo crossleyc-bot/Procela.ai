@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon from "@/components/Icon";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PlatformTabs from "@/components/PlatformTabs";
@@ -123,7 +124,12 @@ export default function Home() {
           </p>
           <div className="contrast-grid">
             <div className="contrast-side">
-              <div className="contrast-label bad">Without Procela</div>
+              <div className="contrast-label bad">
+                <span className="ci">
+                  <Icon name="cross" size={15} />
+                </span>
+                Without Procela
+              </div>
               <div className="contrast-heading">
                 Policies in spreadsheets. Stewards without accountability. Tools that
                 don&apos;t talk.
@@ -135,7 +141,12 @@ export default function Home() {
               </p>
             </div>
             <div className="contrast-side with">
-              <div className="contrast-label good">With Procela</div>
+              <div className="contrast-label good">
+                <span className="ci">
+                  <Icon name="check" size={15} />
+                </span>
+                With Procela
+              </div>
               <div className="contrast-heading">
                 One orchestration layer. Connected tools. A governance program that
                 runs itself.
