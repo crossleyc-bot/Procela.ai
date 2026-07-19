@@ -126,10 +126,10 @@ export default function TermsPage() {
 
         <h2>10. Governing law and disputes</h2>
         <p>
-          These Terms are governed by the laws of the State of Delaware, without regard
+          These Terms are governed by the laws of the State of Florida, without regard
           to its conflict-of-laws principles. You agree that any dispute arising out of
           or relating to these Terms or the Site will be subject to the exclusive
-          jurisdiction of the state and federal courts located in Delaware, and you
+          jurisdiction of the state and federal courts located in Florida, and you
           consent to their personal jurisdiction.
         </p>
 
