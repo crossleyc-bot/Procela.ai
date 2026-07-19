@@ -991,6 +991,18 @@ a.card:hover {
 .prose a {
   color: var(--green-text);
 }
+.article-back {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.article-back a {
+  font-weight: 500;
+  text-decoration: none;
+}
+.article-back a:hover {
+  text-decoration: underline;
+}
 
 /* FORM */
 .form-wrap {
