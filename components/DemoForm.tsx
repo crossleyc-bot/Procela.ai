@@ -2,23 +2,39 @@
 
 import { useState } from "react";
 
-/**
- * Demo / contact request form.
- *
- * NOTE: This is not yet wired to a backend. On submit it shows a confirmation
- * but does not deliver the message anywhere. To make it functional, POST the
- * form state to your CRM / email service / API route from handleSubmit().
- */
 export default function DemoForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: send `new FormData(e.currentTarget)` to a real endpoint.
-    setSubmitted(true);
+    setError(null);
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = Object.fromEntries(fd.entries());
+
+    try {
+      const res = await fetch("/api/demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(
+          data.error || "Something went wrong. Please try again.",
+        );
+      }
+      setStatus("done");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setStatus("idle");
+    }
   }
 
-  if (submitted) {
+  if (status === "done") {
     return (
       <div className="form-success" role="status">
         <h3>Thanks — we&apos;ll be in touch.</h3>
@@ -63,8 +79,31 @@ export default function DemoForm() {
           <label htmlFor="message">What are you trying to govern?</label>
           <textarea id="message" name="message" placeholder="Tell us about your environment and stack." />
         </div>
-        <button type="submit" className="btn-primary-lg full">
-          Request a demo
+
+        {/* Honeypot: hidden from users, catches bots. */}
+        <div className="hp" aria-hidden="true">
+          <label htmlFor="company_website">Company website</label>
+          <input
+            id="company_website"
+            name="company_website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
+        {error && (
+          <p className="form-error" role="alert">
+            {error}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          className="btn-primary-lg full"
+          disabled={status === "sending"}
+        >
+          {status === "sending" ? "Sending…" : "Request a demo"}
         </button>
       </div>
       <p className="form-note">
