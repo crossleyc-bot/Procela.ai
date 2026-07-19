@@ -568,6 +568,11 @@ a {
   color: var(--slate);
   margin-top: 0.85rem;
 }
+.customer-body {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
 
 /* STACK */
 .stack-row {
