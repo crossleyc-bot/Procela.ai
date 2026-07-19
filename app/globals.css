@@ -7,7 +7,13 @@
   --navy: #f7f9f8; /* page background (soft off-white) */
   --navy-mid: #ffffff; /* cards / panels (pure white, lifted with shadow) */
   --navy-light: #eaf0ec;
-  --green-wash: #aecdb9; /* green tint for hero / CTA bands */
+  --hero-grad: linear-gradient(
+    180deg,
+    #163a28 0%,
+    #0d1f17 100%
+  ); /* dark brand band for hero / CTA */
+  --on-dark: #f4f8f5; /* primary text on dark bands */
+  --on-dark-dim: #b8ccbe; /* secondary text on dark bands */
   --shadow-sm: 0 1px 2px rgba(13, 31, 23, 0.04), 0 1px 3px rgba(13, 31, 23, 0.06);
   --shadow-md: 0 4px 16px rgba(13, 31, 23, 0.06),
     0 1px 3px rgba(13, 31, 23, 0.05);
@@ -152,8 +158,29 @@ a {
 
 /* HERO */
 .hero-band {
-  background: var(--green-wash);
+  background: var(--hero-grad);
   border-bottom: 1px solid var(--border);
+}
+.hero-band .hero h1 {
+  color: var(--on-dark);
+}
+.hero-band .hero h1 em {
+  color: var(--green-light);
+}
+.hero-band .hero-sub {
+  color: var(--on-dark-dim);
+}
+.hero-band .hero-eyebrow {
+  color: var(--green-light);
+  border-color: rgba(112, 192, 144, 0.4);
+  background: rgba(74, 140, 106, 0.18);
+}
+.hero-band .btn-outline-lg {
+  color: var(--on-dark);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.hero-band .btn-outline-lg:hover {
+  border-color: var(--green-light);
 }
 .hero {
   padding: 5.5rem 2rem 4rem;
@@ -631,7 +658,7 @@ a {
 
 /* CTA */
 .cta-final {
-  background: var(--green-wash);
+  background: var(--hero-grad);
   border-top: 1px solid var(--border-green);
   padding: 5rem 2rem;
   text-align: center;
@@ -639,14 +666,21 @@ a {
 .cta-final h2 {
   font-size: clamp(1.75rem, 4vw, 2.65rem);
   font-weight: 600;
-  color: var(--ink);
+  color: var(--on-dark);
   margin-bottom: 0.85rem;
   letter-spacing: -0.02em;
 }
 .cta-final p {
   font-size: 1rem;
-  color: var(--text-dim);
+  color: var(--on-dark-dim);
   margin-bottom: 2.25rem;
+}
+.cta-final .btn-outline-lg {
+  color: var(--on-dark);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.cta-final .btn-outline-lg:hover {
+  border-color: var(--green-light);
 }
 .cta-actions {
   display: flex;
