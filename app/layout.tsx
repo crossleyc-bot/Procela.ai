@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -48,12 +55,21 @@ export const metadata: Metadata = {
     description:
       "The orchestration layer that aligns people, process, systems, and data into a single, auditable governance program.",
     siteName: "Procela",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Procela — Enterprise Data Governance Platform",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Procela — Enterprise Data Governance Platform",
     description:
       "The orchestration layer that aligns people, process, systems, and data into a single, auditable governance program.",
+    images: ["/og.png"],
   },
 };
 
@@ -63,7 +79,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

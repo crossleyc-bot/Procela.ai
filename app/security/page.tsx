@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CtaBand from "@/components/CtaBand";
+import Icon, { type IconName } from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "Security — Procela",
@@ -9,23 +10,27 @@ export const metadata: Metadata = {
     "Procela is built for regulated environments: no data egress, edge agents with mTLS, tamper-evident audit logs, and support for ITAR, CMMC, CUI, HIPAA, and SOC 2.",
 };
 
-const PRINCIPLES = [
+const PRINCIPLES: { icon: IconName; kicker: string; title: string; body: string }[] = [
   {
+    icon: "shield",
     kicker: "No data egress",
     title: "Your data never leaves your perimeter",
     body: "Procela Edge Agents run inside your environment and send only metadata to the platform. Source data stays put — making Procela suitable for the most restricted environments.",
   },
   {
+    icon: "edge",
     kicker: "Edge agents",
     title: "Push-down profiling, in your infrastructure",
     body: "Agents deploy via Kubernetes or Helm and profile data where it lives. They authenticate with mTLS and carry a tamper-evident audit log of everything they do.",
   },
   {
+    icon: "audit",
     kicker: "Auditability",
     title: "Every action is logged and attributable",
     body: "Classifications, assignments, policy changes, and access events are captured in an append-only trail tied to a named principal — human or AI — so audits become a query.",
   },
   {
+    icon: "lock",
     kicker: "Least privilege",
     title: "Explicit authority for every principal",
     body: "The principal model scopes exactly what each steward, owner, and agent may do. AI agents operate under three-tier autonomy controls you configure per domain.",
@@ -65,7 +70,12 @@ export default function SecurityPage() {
           <div className="feature-list">
             {PRINCIPLES.map((p) => (
               <div className="feature-row" key={p.kicker}>
-                <div className="feature-kicker">{p.kicker}</div>
+                <div>
+                  <div className="feature-icon">
+                    <Icon name={p.icon} size={22} />
+                  </div>
+                  <div className="feature-kicker">{p.kicker}</div>
+                </div>
                 <div>
                   <h3>{p.title}</h3>
                   <p>{p.body}</p>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CtaBand from "@/components/CtaBand";
+import Icon, { type IconName } from "@/components/Icon";
+import ArchitectureDiagram from "@/components/ArchitectureDiagram";
 
 export const metadata: Metadata = {
   title: "Platform — Procela",
@@ -9,23 +11,27 @@ export const metadata: Metadata = {
     "Procela is the orchestration layer above your data governance stack: governance orchestration, stewardship, policy management, and edge-agent connectivity.",
 };
 
-const PILLARS = [
+const PILLARS: { icon: IconName; kicker: string; title: string; body: string }[] = [
   {
+    icon: "orchestration",
     kicker: "Governance orchestration",
     title: "The layer above your discovery and access stack",
     body: "Procela sits above tools like BigID and Immuta — pulling in classified assets, applying governance policies, and routing stewardship assignments through a single orchestration engine. One control plane instead of a dozen disconnected consoles.",
   },
   {
+    icon: "stewardship",
     kicker: "Stewardship & ownership",
     title: "Clear accountability across every data domain",
     body: "Assign data owners, domain stewards, and AI agents to assets automatically. Procela's principal model treats human and AI participants as first-class governance actors, each operating under explicit, auditable authority.",
   },
   {
+    icon: "policy",
     kicker: "Policy management",
     title: "Policies that flow from business rules, not spreadsheets",
     body: "Define governance policies in plain language. Procela translates them into enforceable rules, propagates them downstream to your enforcement tools, and maintains a full audit trail of every change and decision.",
   },
   {
+    icon: "edge",
     kicker: "Edge agent connectivity",
     title: "Scan your sources without moving your data",
     body: "Procela Edge Agents deploy inside your environment via Kubernetes or Helm. Push-down profiling, mTLS identity, and tamper-evident audit logs mean only metadata ever leaves the perimeter — your data never does.",
@@ -74,7 +80,12 @@ export default function PlatformPage() {
           <div className="feature-list">
             {PILLARS.map((p) => (
               <div className="feature-row" key={p.kicker}>
-                <div className="feature-kicker">{p.kicker}</div>
+                <div>
+                  <div className="feature-icon">
+                    <Icon name={p.icon} size={22} />
+                  </div>
+                  <div className="feature-kicker">{p.kicker}</div>
+                </div>
                 <div>
                   <h3>{p.title}</h3>
                   <p>{p.body}</p>
@@ -82,6 +93,21 @@ export default function PlatformPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      <section className="section">
+        <div className="section-inner">
+          <span className="eyebrow">How it fits together</span>
+          <h2 className="section-title">One orchestration layer, between your tools and your outcomes</h2>
+          <p className="section-body">
+            Procela draws from the discovery, access, and platform tools you already
+            run, and drives governance outcomes back out — without becoming another
+            silo.
+          </p>
+          <ArchitectureDiagram />
         </div>
       </section>
 
