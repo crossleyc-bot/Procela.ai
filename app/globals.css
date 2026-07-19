@@ -3,19 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --navy: #0d1f17;
-  --navy-mid: #122318;
-  --navy-light: #1a3323;
+  /* Light theme */
+  --navy: #ffffff; /* page background */
+  --navy-mid: #f4f7f5; /* cards / alternating surfaces */
+  --navy-light: #eaf0ec;
   --green: #4a8c6a;
   --green-light: #70c090;
   --green-dim: #3d7558;
+  --green-text: #2f7052; /* accent text on light backgrounds */
   --green-faint: rgba(74, 140, 106, 0.12);
-  --green-faint2: rgba(74, 140, 106, 0.07);
-  --slate: #8fa89a;
-  --white: #ffffff;
-  --off-white: #ebf0ec;
-  --text-dim: #b8ccbe;
-  --border: rgba(143, 168, 154, 0.18);
+  --green-faint2: rgba(74, 140, 106, 0.05);
+  --slate: #63746b; /* tertiary text / labels */
+  --white: #ffffff; /* text on green buttons */
+  --off-white: #16281e; /* emphasized quote text */
+  --text-dim: #45564c; /* secondary body text */
+  --ink: #0d1f17; /* primary text / headings */
+  --border: rgba(13, 31, 23, 0.12);
   --border-green: rgba(74, 140, 106, 0.35);
   --sans: var(--font-inter), "Inter", system-ui, sans-serif;
   --mono: var(--font-mono), "JetBrains Mono", monospace;
@@ -34,7 +37,7 @@ html {
 body {
   font-family: var(--sans);
   background: var(--navy);
-  color: var(--white);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -62,13 +65,13 @@ a {
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--green-light);
+  color: var(--green-text);
   border: 1px solid var(--border-green);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
 }
 .ann-link {
-  color: var(--green-light);
+  color: var(--green-text);
   text-decoration: none;
   font-weight: 500;
 }
@@ -83,7 +86,7 @@ a {
   justify-content: space-between;
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--border);
-  background: rgba(13, 31, 23, 0.97);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -109,7 +112,7 @@ a {
   transition: color 0.15s ease;
 }
 .nav-links a:hover {
-  color: var(--white);
+  color: var(--ink);
 }
 .nav-actions {
   display: flex;
@@ -119,7 +122,7 @@ a {
 .btn-ghost-sm {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--white);
+  color: var(--ink);
   background: transparent;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -154,7 +157,7 @@ a {
   display: inline-block;
   font-family: var(--mono);
   font-size: 0.72rem;
-  color: var(--green-light);
+  color: var(--green-text);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border: 1px solid var(--border-green);
@@ -169,10 +172,11 @@ a {
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
+  color: var(--ink);
 }
 .hero h1 em {
   font-style: normal;
-  color: var(--green-light);
+  color: var(--green-dim);
 }
 .hero-sub {
   font-size: 1.0625rem;
@@ -205,7 +209,7 @@ a {
 .btn-outline-lg {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--white);
+  color: var(--ink);
   background: transparent;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -251,6 +255,7 @@ a {
 /* STATS */
 .stats-bar {
   background: var(--navy-mid);
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: center;
@@ -269,12 +274,12 @@ a {
 .stat-num {
   font-size: 1.875rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--ink);
   line-height: 1;
   letter-spacing: -0.02em;
 }
 .stat-num span {
-  color: var(--green-light);
+  color: var(--green-text);
 }
 .stat-label {
   font-size: 0.775rem;
@@ -299,7 +304,7 @@ a {
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.14em;
-  color: var(--green-light);
+  color: var(--green-text);
   text-transform: uppercase;
   font-weight: 500;
   display: block;
@@ -309,7 +314,7 @@ a {
   font-size: clamp(1.65rem, 3.5vw, 2.35rem);
   font-weight: 600;
   line-height: 1.15;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
@@ -351,25 +356,25 @@ a {
 }
 .contrast-label.bad::before {
   content: "✕";
-  color: #f87171;
+  color: #dc4c4c;
   font-weight: 700;
 }
 .contrast-label.good::before {
   content: "✓";
-  color: var(--green-light);
+  color: var(--green-dim);
   font-weight: 700;
 }
 .contrast-heading {
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 0.85rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
 }
 .contrast-body {
   font-size: 0.875rem;
-  color: var(--slate);
+  color: var(--text-dim);
   line-height: 1.7;
 }
 
@@ -393,11 +398,11 @@ a {
   font-family: var(--sans);
 }
 .tab:hover {
-  color: var(--white);
+  color: var(--ink);
 }
 .tab.active {
-  color: var(--green-light);
-  border-bottom-color: var(--green-light);
+  color: var(--green-text);
+  border-bottom-color: var(--green);
 }
 .tab-panel {
   display: grid;
@@ -411,7 +416,7 @@ a {
 .tab-body-heading {
   font-size: 1.35rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 0.85rem;
   line-height: 1.25;
 }
@@ -423,7 +428,7 @@ a {
 }
 .tab-link {
   font-size: 0.875rem;
-  color: var(--green-light);
+  color: var(--green-text);
   text-decoration: none;
   font-weight: 500;
 }
@@ -445,7 +450,7 @@ a {
   gap: 0.8rem;
   padding: 0.6rem 0.85rem;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(13, 31, 23, 0.03);
 }
 .tv-dot {
   width: 7px;
@@ -456,7 +461,7 @@ a {
 }
 .tv-dot.gray {
   background: var(--slate);
-  opacity: 0.4;
+  opacity: 0.5;
 }
 .tv-label {
   font-size: 0.8rem;
@@ -466,7 +471,7 @@ a {
 .tv-badge {
   font-family: var(--mono);
   font-size: 0.62rem;
-  color: var(--green-light);
+  color: var(--green-text);
   border: 1px solid var(--border-green);
   padding: 0.1rem 0.4rem;
   border-radius: 4px;
@@ -485,7 +490,7 @@ a {
 .tv-note {
   font-family: var(--mono);
   font-size: 0.68rem;
-  color: var(--green-light);
+  color: var(--green-text);
   background: var(--green-faint);
   border-radius: 6px;
   padding: 0.5rem 0.85rem;
@@ -509,7 +514,7 @@ a {
 .customer-vertical {
   font-family: var(--mono);
   font-size: 0.72rem;
-  color: var(--green-light);
+  color: var(--green-text);
   margin-bottom: 0.85rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -553,17 +558,17 @@ a {
   margin-bottom: 0.5rem;
 }
 .stack-item.featured .stack-role {
-  color: var(--green-light);
+  color: var(--green-text);
 }
 .stack-name {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 0.4rem;
 }
 .stack-desc {
   font-size: 0.8rem;
-  color: var(--slate);
+  color: var(--text-dim);
   line-height: 1.6;
 }
 
@@ -580,7 +585,7 @@ a {
   text-align: left;
   background: transparent;
   border: none;
-  color: var(--white);
+  color: var(--ink);
   font-size: 0.9375rem;
   font-weight: 500;
   padding: 1.2rem 0;
@@ -592,7 +597,7 @@ a {
   gap: 1rem;
 }
 .faq-icon {
-  color: var(--green-light);
+  color: var(--green-text);
   font-size: 1.1rem;
   transition: transform 0.2s;
   flex-shrink: 0;
@@ -622,7 +627,7 @@ a {
 .cta-final h2 {
   font-size: clamp(1.75rem, 4vw, 2.65rem);
   font-weight: 600;
-  color: var(--white);
+  color: var(--ink);
   margin-bottom: 0.85rem;
   letter-spacing: -0.02em;
 }
@@ -664,12 +669,12 @@ a {
   text-decoration: none;
 }
 .footer-links a:hover {
-  color: var(--white);
+  color: var(--ink);
 }
 .footer-copy {
   font-size: 0.75rem;
   color: var(--slate);
-  opacity: 0.45;
+  opacity: 0.7;
 }
 
 @media (max-width: 680px) {
