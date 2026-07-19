@@ -1198,6 +1198,17 @@ a.card:hover {
   height: auto;
 }
 
+/* Screenshot inside a prose article */
+.article-figure {
+  margin: 2rem 0;
+}
+.article-caption {
+  font-size: 0.8rem;
+  color: var(--slate);
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
 /* Hero product screenshot */
 .hero-shot {
   max-width: 1000px;

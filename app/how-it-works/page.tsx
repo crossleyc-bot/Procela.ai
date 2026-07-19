@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CtaBand from "@/components/CtaBand";
+import BrowserFrame from "@/components/BrowserFrame";
 
 export const metadata: Metadata = {
   title: "How it works — Procela",
@@ -83,6 +84,46 @@ export default function HowItWorksPage() {
             the audit trail updates — continuously, without manual intervention. Your
             team supervises exceptions instead of doing the busywork.
           </p>
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      <section className="section">
+        <div className="section-inner">
+          <span className="eyebrow">In the product</span>
+          <h2 className="section-title">The program, running</h2>
+
+          <div className="product-row">
+            <div className="product-copy">
+              <span className="product-kicker">Program phases</span>
+              <h3>Track the DG Foundation program by phase</h3>
+              <p>
+                From foundation to operationalization, Procela shows exactly where the
+                program stands and the next steps to advance it.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/program.webp"
+              alt="Procela governance program view showing phased progress across foundation, structure, ownership, and operations."
+            />
+          </div>
+
+          <div className="product-row reverse">
+            <div className="product-copy">
+              <span className="product-kicker">Domains</span>
+              <h3>Organize assets into governed domains</h3>
+              <p>
+                Group data assets under a single governance umbrella with assigned
+                owners, stewards, and policies — the backbone of the classify and
+                assign steps.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/domains.webp"
+              alt="Procela data domains view with a domain list and a detail panel showing owner, stewards, and member data assets."
+            />
+          </div>
         </div>
       </section>
 
