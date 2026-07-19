@@ -4,9 +4,13 @@
 
 :root {
   /* Light theme */
-  --navy: #ffffff; /* page background */
-  --navy-mid: #f4f7f5; /* cards / alternating surfaces */
+  --navy: #f7f9f8; /* page background (soft off-white) */
+  --navy-mid: #ffffff; /* cards / panels (pure white, lifted with shadow) */
   --navy-light: #eaf0ec;
+  --green-wash: #eef5f0; /* subtle green tint for hero / CTA bands */
+  --shadow-sm: 0 1px 2px rgba(13, 31, 23, 0.04), 0 1px 3px rgba(13, 31, 23, 0.06);
+  --shadow-md: 0 4px 16px rgba(13, 31, 23, 0.06),
+    0 1px 3px rgba(13, 31, 23, 0.05);
   --green: #4a8c6a;
   --green-light: #70c090;
   --green-dim: #3d7558;
@@ -147,6 +151,10 @@ a {
 }
 
 /* HERO */
+.hero-band {
+  background: var(--green-wash);
+  border-bottom: 1px solid var(--border);
+}
 .hero {
   padding: 5.5rem 2rem 4rem;
   max-width: 860px;
@@ -334,6 +342,7 @@ a {
   background: var(--border);
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 .contrast-side {
   background: var(--navy-mid);
@@ -443,6 +452,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  box-shadow: var(--shadow-md);
 }
 .tv-row {
   display: flex;
@@ -506,6 +516,7 @@ a {
   background: var(--border);
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 .customer-card {
   background: var(--navy-mid);
@@ -539,6 +550,7 @@ a {
   background: var(--border);
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 .stack-item {
   flex: 1;
@@ -619,7 +631,7 @@ a {
 
 /* CTA */
 .cta-final {
-  background: var(--navy-mid);
+  background: var(--green-wash);
   border-top: 1px solid var(--border-green);
   padding: 5rem 2rem;
   text-align: center;
