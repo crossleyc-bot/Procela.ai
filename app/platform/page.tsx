@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import CtaBand from "@/components/CtaBand";
 import Icon, { type IconName } from "@/components/Icon";
 import ArchitectureDiagram from "@/components/ArchitectureDiagram";
+import BrowserFrame from "@/components/BrowserFrame";
 
 export const metadata: Metadata = {
   title: "Platform — Procela",
@@ -108,6 +109,61 @@ export default function PlatformPage() {
             silo.
           </p>
           <ArchitectureDiagram />
+        </div>
+      </section>
+
+      <hr className="divider" />
+
+      <section className="section">
+        <div className="section-inner">
+          <span className="eyebrow">In the product</span>
+          <h2 className="section-title">See governance actually running</h2>
+
+          <div className="product-row">
+            <div className="product-copy">
+              <span className="product-kicker">Stewardship &amp; ownership</span>
+              <h3>Every person, role, and domain in one place</h3>
+              <p>
+                A live directory of owners, stewards, and agents across your
+                organization — with app and governance roles assigned and
+                accountable.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/people.webp"
+              alt="Procela People view listing owners and stewards with their roles and titles across the organization."
+            />
+          </div>
+
+          <div className="product-row reverse">
+            <div className="product-copy">
+              <span className="product-kicker">Systems &amp; data</span>
+              <h3>A live inventory of where your data lives</h3>
+              <p>
+                Every system and data asset catalogued and typed — the foundation
+                the governance program is built on.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/systems.webp"
+              alt="Procela Systems view showing a catalogued inventory of applications and platforms by type."
+            />
+          </div>
+
+          <div className="product-row">
+            <div className="product-copy">
+              <span className="product-kicker">Lineage</span>
+              <h3>Data flows, derived automatically</h3>
+              <p>
+                Asset-level lineage reconciled from your sources, so you can see
+                which system feeds which — and keep it audit-ready.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/lineage.webp"
+              alt="Procela Data Lineage view showing asset-level edges between source and staging tables."
+            />
+          </div>
         </div>
       </section>
 

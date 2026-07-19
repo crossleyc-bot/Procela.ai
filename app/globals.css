@@ -1142,6 +1142,120 @@ a.card:hover {
   border-color: var(--green-light);
 }
 
+/* Browser frame for product screenshots */
+.browser {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(13, 31, 23, 0.08);
+  box-shadow: 0 24px 60px rgba(13, 31, 23, 0.28), 0 6px 16px rgba(13, 31, 23, 0.12);
+}
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.85rem;
+  background: #eef2f0;
+  border-bottom: 1px solid rgba(13, 31, 23, 0.08);
+}
+.browser-dots {
+  display: inline-flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+.browser-dots i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: block;
+}
+.browser-dots i:nth-child(1) {
+  background: #ef6a5f;
+}
+.browser-dots i:nth-child(2) {
+  background: #f5bd4f;
+}
+.browser-dots i:nth-child(3) {
+  background: #62c554;
+}
+.browser-url {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--slate);
+  background: #ffffff;
+  border: 1px solid rgba(13, 31, 23, 0.08);
+  border-radius: 6px;
+  padding: 0.2rem 0.7rem;
+  flex: 1;
+  max-width: 260px;
+  margin: 0 auto;
+  text-align: center;
+}
+.browser-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Hero product screenshot */
+.hero-shot {
+  max-width: 1000px;
+  margin: 2.75rem auto 0;
+  padding: 0 2rem;
+}
+
+/* Alternating product-tour rows */
+.product-row {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+.product-row:first-of-type {
+  margin-top: 3rem;
+}
+.product-row.reverse .product-copy {
+  order: 2;
+}
+.product-copy .product-kicker {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-text);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.product-copy h3 {
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+.product-copy p {
+  font-size: 0.9375rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+@media (max-width: 760px) {
+  .product-row,
+  .product-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .product-row.reverse .product-copy {
+    order: 0;
+  }
+  .hero-shot {
+    padding: 0 1rem;
+  }
+}
+
 /* Feature / card icon chips */
 .feature-icon {
   width: 42px;
