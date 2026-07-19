@@ -1042,6 +1042,25 @@ a.card:hover {
   margin-top: 1rem;
   text-align: center;
 }
+.form-error {
+  font-size: 0.85rem;
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid rgba(192, 57, 43, 0.25);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+}
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.btn-primary-lg:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
 .form-success {
   background: var(--green-faint);
   border: 1px solid var(--border-green);
