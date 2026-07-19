@@ -16,9 +16,9 @@ const INTEGRATIONS = [
 ];
 
 const STATS = [
-  { num: "4", accent: "×", label: "Governance pillars unified in one platform" },
-  { pre: "<", num: "30", label: "Days to governance program baseline" },
-  { num: "100", accent: "%", label: "Audit-ready lineage on every governed asset" },
+  { num: "4", label: "Governance pillars in one platform" },
+  { num: "5", label: "Steps in the DG Foundation track" },
+  { num: "3", label: "Autonomy tiers for human & AI actors" },
   { num: "0", label: "Data moved outside your environment" },
 ];
 
@@ -102,11 +102,7 @@ export default function Home() {
       <div className="stats-bar">
         {STATS.map((s) => (
           <div className="stat" key={s.label}>
-            <div className="stat-num">
-              {s.pre && <span>{s.pre}</span>}
-              {s.num}
-              {s.accent && <span>{s.accent}</span>}
-            </div>
+            <div className="stat-num">{s.num}</div>
             <div className="stat-label">{s.label}</div>
           </div>
         ))}
