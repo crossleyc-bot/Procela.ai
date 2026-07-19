@@ -1,6 +1,9 @@
-import Logo from "@/components/Logo";
+import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import PlatformTabs from "@/components/PlatformTabs";
 import Faq from "@/components/Faq";
+import CtaBand from "@/components/CtaBand";
 
 const INTEGRATIONS = [
   "BigID",
@@ -62,30 +65,7 @@ const STACK = [
 export default function Home() {
   return (
     <>
-      {/* ANNOUNCEMENT */}
-      <div className="announcement">
-        <span className="ann-badge">New</span>
-        BigID integration now in private beta —{" "}
-        <a className="ann-link" href="#">
-          Join the waitlist →
-        </a>
-      </div>
-
-      {/* NAV */}
-      <nav className="nav">
-        <a className="nav-brand" href="#" aria-label="Procela home">
-          <Logo height={32} />
-        </a>
-        <div className="nav-links">
-          <a href="#platform">Platform</a>
-          <a href="#how-it-works">How it works</a>
-          <a href="#integrations">Integrations</a>
-          <a href="#resources">Resources</a>
-        </div>
-        <div className="nav-actions">
-          <button className="btn-green">Request a demo</button>
-        </div>
-      </nav>
+      <SiteHeader />
 
       {/* HERO */}
       <div className="hero-band">
@@ -104,14 +84,18 @@ export default function Home() {
             program.
           </p>
           <div className="hero-actions">
-            <button className="btn-primary-lg">Request a demo</button>
-            <button className="btn-outline-lg">Explore the platform</button>
+            <Link className="btn-primary-lg" href="/demo">
+              Request a demo
+            </Link>
+            <Link className="btn-outline-lg" href="/platform">
+              Explore the platform
+            </Link>
           </div>
         </header>
       </div>
 
       {/* LOGO STRIP */}
-      <div className="logo-strip" id="integrations">
+      <div className="logo-strip">
         <span className="logo-strip-label">Integrates with</span>
         {INTEGRATIONS.map((name) => (
           <span key={name} className="logo-pill">
@@ -233,6 +217,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div style={{ marginTop: "2rem" }}>
+            <Link className="tab-link" href="/integrations">
+              See all integrations →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -248,33 +237,12 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="cta-final">
-        <h2>For leaders who need governance that actually runs</h2>
-        <p>
-          Procela is built for regulated, complex enterprises. Let&apos;s talk about
-          your environment.
-        </p>
-        <div className="cta-actions">
-          <button className="btn-primary-lg">Request a demo</button>
-          <button className="btn-outline-lg">Read the docs</button>
-        </div>
-      </section>
+      <CtaBand
+        title="For leaders who need governance that actually runs"
+        body="Procela is built for regulated, complex enterprises. Let's talk about your environment."
+      />
 
-      {/* FOOTER */}
-      <footer className="footer">
-        <div className="footer-brand">
-          <Logo height={22} className="opacity-60" />
-        </div>
-        <div className="footer-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Security</a>
-          <a href="#">Contact</a>
-        </div>
-        <span className="footer-copy">
-          © 2025 Datalign Technology LLC · DBA Procela.ai
-        </span>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

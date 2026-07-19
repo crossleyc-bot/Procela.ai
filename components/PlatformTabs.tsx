@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type Row = {
   label: string;
@@ -15,6 +16,7 @@ type Panel = {
   heading: string;
   body: string;
   link: string;
+  href: string;
   rows: Row[];
   arrows?: number[]; // indices after which to render a downward arrow
   note?: string;
@@ -26,6 +28,7 @@ const PANELS: Panel[] = [
     heading: "The layer above your discovery and access stack",
     body: "Procela sits above BigID and Immuta — pulling classified assets, applying governance policies, and routing stewardship assignments through a single orchestration engine.",
     link: "See the integration architecture →",
+    href: "/integrations",
     arrows: [1, 2],
     rows: [
       { label: "BigID — discovery & classification", badge: "input", gray: true },
@@ -44,6 +47,7 @@ const PANELS: Panel[] = [
     heading: "Clear ownership across every data domain",
     body: "Assign data owners, domain stewards, and AI agents to assets automatically. Procela's principal model supports human and AI participants in governance roles with three-tier autonomy controls.",
     link: "Learn about the principal model →",
+    href: "/platform",
     rows: [
       { label: "Hull #789 — Production Data Domain", badge: "owner assigned", active: true },
       { label: "SWBS 500 — Engineering Assets", badge: "steward active", active: true },
@@ -56,6 +60,7 @@ const PANELS: Panel[] = [
     heading: "Policies that flow from business rules, not spreadsheets",
     body: "Define governance policies in plain language. Procela translates them into enforceable rules, propagates them downstream, and maintains a full audit trail of every change and decision.",
     link: "See policy workflow demo →",
+    href: "/platform",
     rows: [
       { label: "CUI data — restricted access policy", badge: "enforced", active: true },
       { label: "PII retention — 90-day expiry rule", badge: "active", active: true },
@@ -68,6 +73,7 @@ const PANELS: Panel[] = [
     heading: "Scan your sources without moving your data",
     body: "Procela Edge Agents deploy inside your environment via Kubernetes or Helm. Push-down profiling, mTLS identity, and tamper-evident audit logs — your data never leaves the perimeter.",
     link: "Read the edge agent spec →",
+    href: "/security",
     note: "✓ mTLS · push-down profiling · no data egress",
     rows: [
       { label: "Edge Agent — AWS VPC (us-east-1)", badge: "connected", active: true },
@@ -101,9 +107,9 @@ export default function PlatformTabs() {
         <div>
           <div className="tab-body-heading">{panel.heading}</div>
           <p className="tab-body-text">{panel.body}</p>
-          <a href="#" className="tab-link">
+          <Link href={panel.href} className="tab-link">
             {panel.link}
-          </a>
+          </Link>
         </div>
         <div className="tab-visual">
           {panel.rows.map((row, i) => (
