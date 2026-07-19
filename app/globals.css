@@ -7,7 +7,7 @@
   --navy: #f7f9f8; /* page background (soft off-white) */
   --navy-mid: #ffffff; /* cards / panels (pure white, lifted with shadow) */
   --navy-light: #eaf0ec;
-  --green-wash: #eef5f0; /* subtle green tint for hero / CTA bands */
+  --green-wash: #d7e9de; /* green tint for hero / CTA bands */
   --shadow-sm: 0 1px 2px rgba(13, 31, 23, 0.04), 0 1px 3px rgba(13, 31, 23, 0.06);
   --shadow-md: 0 4px 16px rgba(13, 31, 23, 0.06),
     0 1px 3px rgba(13, 31, 23, 0.05);
