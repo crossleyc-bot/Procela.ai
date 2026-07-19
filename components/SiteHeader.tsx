@@ -6,9 +6,9 @@ export default function SiteHeader() {
     <>
       <div className="announcement">
         <span className="ann-badge">New</span>
-        BigID integration now in private beta —{" "}
+        Introducing Procela — governance orchestration for regulated enterprises.{" "}
         <Link className="ann-link" href="/demo">
-          Join the waitlist →
+          Request a demo →
         </Link>
       </div>
 

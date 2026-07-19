@@ -13,37 +13,37 @@ const INTEGRATIONS = [
   {
     role: "Discovery & classification",
     name: "BigID",
-    desc: "Scans and classifies sensitive data across hybrid environments; Procela pulls classified assets in as governed objects.",
+    desc: "Designed to pull BigID's classified assets in as governed objects in your program.",
   },
   {
     role: "Access policy enforcement",
     name: "Immuta",
-    desc: "Attribute-based access control at the data platform layer, driven by policies Procela propagates downstream.",
+    desc: "Designed to drive Immuta's attribute-based access controls from policies Procela propagates downstream.",
   },
   {
     role: "Data platform",
     name: "Databricks",
-    desc: "Govern lakehouse assets in place — Procela maps ownership and policy to Unity Catalog objects.",
+    desc: "Designed to map ownership and policy to Unity Catalog objects, governing lakehouse assets in place.",
   },
   {
     role: "Data platform",
     name: "Snowflake",
-    desc: "Apply stewardship and policy to Snowflake databases, schemas, and tables without moving data.",
+    desc: "Designed to apply stewardship and policy to Snowflake databases, schemas, and tables without moving data.",
   },
   {
     role: "Cloud",
     name: "AWS",
-    desc: "Edge Agents run inside your VPC for push-down profiling of S3, RDS, Redshift, and more.",
+    desc: "Edge Agents designed to run inside your VPC for push-down profiling of S3, RDS, Redshift, and more.",
   },
   {
     role: "Catalog & governance",
     name: "Microsoft Purview",
-    desc: "Complement Purview's catalog with Procela's orchestration layer for stewardship and policy execution.",
+    desc: "Designed to complement Purview's catalog with Procela's orchestration for stewardship and policy execution.",
   },
   {
     role: "Catalog",
     name: "Collibra",
-    desc: "Run Procela alongside an existing catalog — it coordinates the program rather than replacing your metadata store.",
+    desc: "Designed to run alongside an existing catalog — coordinating the program rather than replacing your metadata store.",
   },
 ];
 
@@ -57,19 +57,20 @@ export default function IntegrationsPage() {
           <span className="hero-eyebrow">Integrations</span>
           <h1>The orchestration layer above your stack</h1>
           <p>
-            Procela works alongside the tools you already run — adding governance
-            orchestration without ripping and replacing what&apos;s working.
+            Procela is designed to integrate with the tools you already run — adding
+            governance orchestration without ripping and replacing what&apos;s working.
           </p>
         </div>
       </div>
 
       <section className="section">
         <div className="section-inner">
-          <span className="eyebrow">Connected tools</span>
+          <span className="eyebrow">Designed to integrate with</span>
           <h2 className="section-title">Procela coordinates, your stack executes</h2>
           <p className="section-body">
             Discovery, classification, access control, and cataloging stay where they
-            are. Procela connects them into one coordinated governance program.
+            are. Procela is designed to connect them into one coordinated governance
+            program.
           </p>
           <div className="card-grid">
             {INTEGRATIONS.map((i) => (

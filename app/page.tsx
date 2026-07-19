@@ -22,24 +22,18 @@ const STATS = [
   { num: "0", label: "Data moved outside your environment" },
 ];
 
-const CUSTOMERS = [
+const VERTICALS = [
   {
-    vertical: "Defense Shipbuilding",
-    quote:
-      "We needed a program that could span hull-partitioned data domains and still give NAVSEA a single governance view. Procela made that possible.",
-    attr: "Chief Data Architect, Tier-1 Defense Contractor",
+    vertical: "Defense & Shipbuilding",
+    body: "Span hull- and program-partitioned data domains under CUI and ITAR controls, and give program stakeholders a single, auditable governance view — without moving data off-premises.",
   },
   {
     vertical: "Financial Services",
-    quote:
-      "Connecting BigID and Immuta through Procela's orchestration layer cut our audit prep from six weeks to five days.",
-    attr: "VP Data Governance, Regional Bank",
+    body: "Connect discovery and access-control tools into one orchestrated program, with continuous, audit-ready lineage that shrinks audit prep from weeks to days.",
   },
   {
     vertical: "Healthcare & Life Sciences",
-    quote:
-      "HIPAA, SOC 2, and internal policy — Procela enforces them through a single policy layer that our stewards actually use.",
-    attr: "CDO, National Health Network",
+    body: "Enforce HIPAA, SOC 2, and internal policy through a single policy layer your stewards actually use — backed by a complete, tamper-evident audit trail.",
   },
 ];
 
@@ -96,7 +90,7 @@ export default function Home() {
 
       {/* LOGO STRIP */}
       <div className="logo-strip">
-        <span className="logo-strip-label">Integrates with</span>
+        <span className="logo-strip-label">Designed to integrate with</span>
         {INTEGRATIONS.map((name) => (
           <span key={name} className="logo-pill">
             {name}
@@ -173,19 +167,18 @@ export default function Home() {
 
       <hr className="divider" />
 
-      {/* SOCIAL PROOF */}
+      {/* BUILT FOR */}
       <section className="section" id="how-it-works">
         <div className="section-inner">
           <span className="eyebrow">Built for regulated enterprises</span>
           <h2 className="section-title">
-            Governance programs that hold up under audit
+            Governance that holds up in the hardest environments
           </h2>
           <div className="customers-grid">
-            {CUSTOMERS.map((c) => (
-              <div className="customer-card" key={c.vertical}>
-                <div className="customer-vertical">{c.vertical}</div>
-                <div className="customer-quote">&ldquo;{c.quote}&rdquo;</div>
-                <div className="customer-attr">{c.attr}</div>
+            {VERTICALS.map((v) => (
+              <div className="customer-card" key={v.vertical}>
+                <div className="customer-vertical">{v.vertical}</div>
+                <p className="customer-body">{v.body}</p>
               </div>
             ))}
           </div>
