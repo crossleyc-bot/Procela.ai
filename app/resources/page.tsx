@@ -16,18 +16,21 @@ const CATEGORIES = [
     title: "Product docs",
     body: "Reference for deploying Edge Agents, connecting integrations, modeling principals, and authoring policies.",
     link: "Browse the docs",
+    href: "/resources/docs",
   },
   {
     kicker: "Guides",
     title: "Whitepapers & guides",
     body: "Deeper reading on governance orchestration, the principal model, and running programs in regulated environments.",
     link: "Read the guides",
+    href: "/resources/guides",
   },
   {
     kicker: "Blog",
     title: "From the team",
     body: "Perspectives on data governance, AI participants in stewardship, and lessons from the field.",
     link: "Visit the blog",
+    href: "/resources/blog",
   },
 ];
 
@@ -74,7 +77,7 @@ export default function ResourcesPage() {
           <h2 className="section-title">Where to start</h2>
           <div className="card-grid">
             {CATEGORIES.map((c) => (
-              <Link className="card" href="/demo" key={c.title}>
+              <Link className="card" href={c.href} key={c.title}>
                 <span className="card-kicker">{c.kicker}</span>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
