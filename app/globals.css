@@ -1155,6 +1155,10 @@ a.card:hover {
   margin-top: 1rem;
   text-align: center;
 }
+.form-note a {
+  color: var(--green-text);
+  text-decoration: underline;
+}
 .form-error {
   font-size: 0.85rem;
   color: #c0392b;

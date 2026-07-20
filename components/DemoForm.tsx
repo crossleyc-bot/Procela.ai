@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function DemoForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
@@ -107,7 +108,10 @@ export default function DemoForm() {
         </button>
       </div>
       <p className="form-note">
-        We&apos;ll only use your details to contact you about Procela.
+        By submitting, you agree to our{" "}
+        <Link href="/terms">Terms of Service</Link> and{" "}
+        <Link href="/privacy">Privacy Policy</Link>. We&apos;ll only use your details to
+        contact you about Procela.
       </p>
     </form>
   );

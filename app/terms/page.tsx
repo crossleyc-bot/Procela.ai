@@ -113,7 +113,9 @@ export default function TermsPage() {
           profits, revenue, data, or goodwill, arising out of or in connection with your
           use of, or inability to use, the Site — whether based on warranty, contract,
           tort, or any other legal theory, and whether or not we have been advised of
-          the possibility of such damages.
+          the possibility of such damages. In no event will our total aggregate
+          liability arising out of or relating to the Site exceed one hundred U.S.
+          dollars (US $100).
         </p>
 
         <h2>9. Indemnification</h2>
@@ -129,8 +131,8 @@ export default function TermsPage() {
           These Terms are governed by the laws of the State of Florida, without regard
           to its conflict-of-laws principles. You agree that any dispute arising out of
           or relating to these Terms or the Site will be subject to the exclusive
-          jurisdiction of the state and federal courts located in Florida, and you
-          consent to their personal jurisdiction.
+          jurisdiction of the state and federal courts located in [County] County,
+          Florida, and you consent to their personal jurisdiction.
         </p>
 
         <h2>11. Changes to these Terms</h2>
@@ -152,8 +154,15 @@ export default function TermsPage() {
         <h2>13. Contact us</h2>
         <p>
           Questions about these Terms can be directed to Datalign Technology LLC at{" "}
-          <a href="mailto:legal@procela.ai">legal@procela.ai</a>, or through our{" "}
-          <a href="/demo">contact page</a>.
+          <a href="mailto:legal@procela.ai">legal@procela.ai</a>, through our{" "}
+          <a href="/demo">contact page</a>, or by mail at:
+        </p>
+        <p>
+          Datalign Technology LLC
+          <br />
+          [Street Address]
+          <br />
+          [City], FL [ZIP]
         </p>
       </article>
 
