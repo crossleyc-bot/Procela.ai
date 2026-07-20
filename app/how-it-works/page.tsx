@@ -124,6 +124,37 @@ export default function HowItWorksPage() {
               alt="Procela data domains view with a domain list and a detail panel showing owner, stewards, and member data assets."
             />
           </div>
+
+          <div className="product-row">
+            <div className="product-copy">
+              <span className="product-kicker">Organization</span>
+              <h3>Model the org that governs the data</h3>
+              <p>
+                Map divisions, departments, and teams so ownership and stewardship
+                land with the right people from the start.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/orgs.webp"
+              alt="Procela organizations view showing an expanded hierarchy of divisions and departments with people counts."
+            />
+          </div>
+
+          <div className="product-row reverse">
+            <div className="product-copy">
+              <span className="product-kicker">Maturity scorecard</span>
+              <h3>Measure the program as it matures</h3>
+              <p>
+                Track governance maturity across process documentation, data
+                governance, domain coverage, and structure — so progress is visible,
+                not anecdotal.
+              </p>
+            </div>
+            <BrowserFrame
+              src="/screenshots/scorecard.webp"
+              alt="Procela governance maturity scorecard showing an overall score and per-dimension progress bars."
+            />
+          </div>
         </div>
       </section>
 
