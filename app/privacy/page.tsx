@@ -169,9 +169,9 @@ export default function PrivacyPage() {
         <p>
           Datalign Technology LLC
           <br />
-          [Street Address]
+          25546 High Hampton Circle
           <br />
-          [City], FL [ZIP]
+          Sorrento, FL 32776
         </p>
       </article>
 
