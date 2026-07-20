@@ -78,12 +78,33 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Procela",
+    legalName: "Datalign Technology LLC",
+    url: siteUrl,
+    logo: `${siteUrl}/procela-icon.svg`,
+    description:
+      "Procela is the orchestration layer that connects stewards, policies, tools, and data assets into a single, auditable data governance program.",
+    sameAs: [] as string[],
+  };
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+      </body>
     </html>
   );
 }

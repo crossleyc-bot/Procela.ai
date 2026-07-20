@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import MobileNav from "./MobileNav";
 
 export default function SiteHeader() {
   return (
@@ -27,7 +28,9 @@ export default function SiteHeader() {
             Request a demo
           </Link>
         </div>
+        <MobileNav />
       </nav>
+      <span id="main-content" tabIndex={-1} />
     </>
   );
 }
