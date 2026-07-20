@@ -29,11 +29,11 @@ export default function PrivacyPage() {
 
         <h2>1. Information we collect</h2>
         <p>
-          <strong>Information you provide.</strong> When you request a demo, join a
-          waitlist, or otherwise contact us, we collect the information you submit —
-          typically your name, work email address, company, industry, and any message
-          you include. Providing this information is voluntary, but some of it is
-          necessary for us to respond to your request.
+          <strong>Information you provide.</strong> When you request a demo or
+          otherwise contact us, we collect the information you submit — typically your
+          name, work email address, company, industry, and any message you include.
+          Providing this information is voluntary, but some of it is necessary for us to
+          respond to your request.
         </p>
         <p>
           <strong>Information collected automatically.</strong> When you visit the
@@ -163,8 +163,15 @@ export default function PrivacyPage() {
         <p>
           If you have questions about this Policy or our privacy practices, contact
           Datalign Technology LLC at{" "}
-          <a href="mailto:privacy@procela.ai">privacy@procela.ai</a>, or through our{" "}
-          <a href="/demo">contact page</a>.
+          <a href="mailto:privacy@procela.ai">privacy@procela.ai</a>, through our{" "}
+          <a href="/demo">contact page</a>, or by mail at:
+        </p>
+        <p>
+          Datalign Technology LLC
+          <br />
+          [Street Address]
+          <br />
+          [City], FL [ZIP]
         </p>
       </article>
 
