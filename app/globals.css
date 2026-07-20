@@ -1210,9 +1210,12 @@ a.card:hover {
 }
 
 /* Hero product screenshot */
+.hero-band .hero {
+  padding-bottom: 1.5rem;
+}
 .hero-shot {
   max-width: 1000px;
-  margin: 2.75rem auto 0;
+  margin: 0.5rem auto 4rem;
   padding: 0 2rem;
 }
 
