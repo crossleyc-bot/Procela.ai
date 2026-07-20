@@ -131,7 +131,7 @@ export default function TermsPage() {
           These Terms are governed by the laws of the State of Florida, without regard
           to its conflict-of-laws principles. You agree that any dispute arising out of
           or relating to these Terms or the Site will be subject to the exclusive
-          jurisdiction of the state and federal courts located in [County] County,
+          jurisdiction of the state and federal courts located in Lake County,
           Florida, and you consent to their personal jurisdiction.
         </p>
 
@@ -160,9 +160,9 @@ export default function TermsPage() {
         <p>
           Datalign Technology LLC
           <br />
-          [Street Address]
+          25546 High Hampton Circle
           <br />
-          [City], FL [ZIP]
+          Sorrento, FL 32776
         </p>
       </article>
 
