@@ -6,6 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PlatformTabs from "@/components/PlatformTabs";
 import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
+import OrchestrationDiagram from "@/components/OrchestrationDiagram";
 
 const INTEGRATIONS = [
   "BigID",
@@ -106,6 +107,13 @@ export default function Home() {
           </span>
         ))}
       </div>
+
+      {/* ORCHESTRATION DIAGRAM */}
+      <section className="section">
+        <div className="section-inner">
+          <OrchestrationDiagram />
+        </div>
+      </section>
 
       {/* STATS */}
       <div className="stats-bar">

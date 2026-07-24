@@ -1,0 +1,73 @@
+/* Orchestration diagram (converted from static SVG mockup) */
+.orchestration-diagram {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.orchestration-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.orchestration-diagram svg text {
+  font-family: var(--sans);
+}
+
+@keyframes orch-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes orch-pulse-ring {
+  0%,
+  100% {
+    r: 24;
+    opacity: 0.12;
+  }
+  50% {
+    r: 31;
+    opacity: 0;
+  }
+}
+
+.orchestration-diagram .bi,
+.orchestration-diagram .bo,
+.orchestration-diagram .ri {
+  animation: orch-fade-up 0.5s ease both;
+}
+.orchestration-diagram .cb {
+  animation: orch-fade-up 0.4s ease both;
+}
+.orchestration-diagram .pr {
+  animation: orch-pulse-ring 2.4s ease-out infinite;
+}
+.orchestration-diagram .nh {
+  cursor: pointer;
+}
+.orchestration-diagram .nh:hover rect {
+  opacity: 0.82;
+}
+.orchestration-diagram .th {
+  font-size: 14px;
+  font-weight: 500;
+  fill: #1a1a18;
+}
+.orchestration-diagram .ts {
+  font-size: 12px;
+  font-weight: 400;
+  fill: #73726c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orchestration-diagram .dot-left,
+  .orchestration-diagram .dot-right {
+    display: none;
+  }
+  .orchestration-diagram .pr {
+    animation: none !important;
+  }
+}
