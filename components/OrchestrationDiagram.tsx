@@ -138,7 +138,7 @@ function OutputBox({ box }: { box: Box }) {
 export default function OrchestrationDiagram() {
   return (
     <div className="orchestration-diagram">
-      <svg width="100%" viewBox="0 0 680 700" xmlns="http://www.w3.org/2000/svg">
+      <svg width="100%" viewBox="0 0 680 610" xmlns="http://www.w3.org/2000/svg">
         <title>Procela orchestration diagram</title>
         <defs>
           <marker id="arr-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
