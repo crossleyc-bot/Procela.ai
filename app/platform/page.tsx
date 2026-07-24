@@ -3,7 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import CtaBand from "@/components/CtaBand";
 import Icon, { type IconName } from "@/components/Icon";
-import ArchitectureDiagram from "@/components/ArchitectureDiagram";
+import OrchestrationDiagram from "@/components/OrchestrationDiagram";
 import BrowserFrame from "@/components/BrowserFrame";
 
 export const metadata: Metadata = {
@@ -108,7 +108,7 @@ export default function PlatformPage() {
             run, and drives governance outcomes back out — without becoming another
             silo.
           </p>
-          <ArchitectureDiagram />
+          <OrchestrationDiagram />
         </div>
       </section>
 
