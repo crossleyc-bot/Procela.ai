@@ -1,15 +1,14 @@
 import { NextResponse } from "next/server";
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
+import { Resend } from "resend";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const REGION =
-  process.env.SES_REGION || process.env.AWS_REGION || "us-east-1";
-const FROM = process.env.SES_FROM_EMAIL;
+const FROM = process.env.DEMO_FROM_EMAIL;
 const TO = process.env.DEMO_TO_EMAIL;
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
-const ses = new SESClient({ region: REGION });
+const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
 
 function isEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
@@ -55,9 +54,9 @@ export async function POST(req: Request) {
     );
   }
 
-  if (!FROM || !TO) {
+  if (!resend || !FROM || !TO) {
     console.error(
-      "Demo form not configured: set SES_FROM_EMAIL and DEMO_TO_EMAIL.",
+      "Demo form not configured: set RESEND_API_KEY, DEMO_FROM_EMAIL, and DEMO_TO_EMAIL.",
     );
     return NextResponse.json(
       { error: "The form isn't configured yet. Please email us directly." },
@@ -65,7 +64,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const subject = `Demo request — ${company}`;
+  const subject = `Demo request - ${company}`;
   const textBody = [
     `Name: ${name}`,
     `Email: ${email}`,
@@ -87,23 +86,27 @@ export async function POST(req: Request) {
     `<p>${escapeHtml(message || "(no message)").replace(/\n/g, "<br>")}</p>`;
 
   try {
-    await ses.send(
-      new SendEmailCommand({
-        Source: FROM,
-        Destination: { ToAddresses: [TO] },
-        ReplyToAddresses: [email],
-        Message: {
-          Subject: { Data: subject, Charset: "UTF-8" },
-          Body: {
-            Text: { Data: textBody, Charset: "UTF-8" },
-            Html: { Data: htmlBody, Charset: "UTF-8" },
-          },
+    const { error } = await resend.emails.send({
+      from: FROM,
+      to: [TO],
+      replyTo: email,
+      subject,
+      text: textBody,
+      html: htmlBody,
+    });
+    if (error) {
+      console.error("Resend send failed:", error);
+      return NextResponse.json(
+        {
+          error:
+            "Something went wrong sending your request. Please try again or email us directly.",
         },
-      }),
-    );
+        { status: 502 },
+      );
+    }
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("SES send failed:", err);
+    console.error("Resend send failed:", err);
     return NextResponse.json(
       {
         error:
